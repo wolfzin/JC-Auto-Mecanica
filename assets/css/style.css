@@ -1,0 +1,119 @@
+/* Jc Auto Mecânica · "Ordem de serviço aberta" (demonstração WolfStudio) */
+:root{--papel:#F3F1EA;--carvao:#1C1C1C;--telha:#2F6FAE;--telha-esc:#1f4f80;--amarelo:#E6B800;--ok:#2F8F4E;--patio:#6B7280;--linha:#d9d4c4;
+--tit:'Archivo Black','Arial Black',sans-serif;--txt:'IBM Plex Sans',system-ui,-apple-system,'Segoe UI',sans-serif;--mono:'IBM Plex Mono',ui-monospace,Menlo,Consolas,monospace}
+*,*::before,*::after{box-sizing:border-box}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth;scroll-padding-top:70px;-webkit-text-size-adjust:100%}
+body{margin:0;color:var(--carvao);font:400 1.0625rem/1.6 var(--txt);
+background:var(--telha) repeating-linear-gradient(90deg,rgba(255,255,255,.10) 0 3px,rgba(0,0,0,0) 3px 22px,rgba(0,0,0,.16) 22px 26px,rgba(0,0,0,0) 26px 34px)}
+img{display:block;max-width:100%;height:auto}
+figure,blockquote{margin:0}
+h1,h2{font-family:var(--tit);font-weight:400;margin:0;line-height:1.05}
+a{color:var(--telha-esc)}
+:focus-visible{outline:3px solid var(--carvao);outline-offset:3px;box-shadow:0 0 0 6px var(--amarelo)}
+.mono{font-family:var(--mono)}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.pular{position:absolute;left:12px;top:-60px;z-index:100;background:var(--amarelo);color:var(--carvao);padding:12px 18px;font-weight:700;text-decoration:none}
+.pular:focus{top:12px}
+.demo-faixa{background:var(--carvao);color:#fff;text-align:center;font-size:.875rem;padding:6px 12px}
+.telha{position:sticky;top:0;z-index:20;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:4px 16px;padding:8px clamp(14px,4vw,40px);background:var(--telha-esc);color:#fff;border-bottom:3px solid var(--amarelo)}
+.telha p{margin:0}
+.telha-nome{font-family:var(--tit);font-size:1.05rem}
+.telha-nome a{color:#fff;text-decoration:none;display:inline-flex;align-items:center;min-height:44px}
+.telha-nome span{font:500 .875rem var(--mono);opacity:.85}
+.status{display:flex;align-items:center;gap:8px;font:500 .875rem var(--mono)}
+.ponto{width:11px;height:11px;border:2px solid #fff;background:transparent;flex:none}
+.status.aberto .ponto{background:#6fdc93;border-color:#6fdc93}
+.status.fechado .ponto{background:var(--amarelo);border-color:var(--amarelo)}
+.bt{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:12px 22px;font:700 1rem/1.2 var(--txt);text-decoration:none;text-align:center;border:2px solid var(--carvao);cursor:pointer;transition:transform .15s,box-shadow .15s}
+.bt-amarelo{background:var(--amarelo);color:var(--carvao);box-shadow:4px 4px 0 var(--carvao)}
+.bt-amarelo:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--carvao)}
+.bt-tel{background:transparent;color:var(--carvao)}
+.bt-tel:hover{background:#fff}
+/* folha */
+main{padding:clamp(18px,4vw,56px) clamp(10px,3vw,40px) 40px}
+.folha{position:relative;max-width:1120px;margin:0 auto;background:var(--papel);box-shadow:0 18px 50px rgba(0,0,0,.35);padding:clamp(22px,4vw,56px);
+background-image:repeating-linear-gradient(180deg,transparent 0 31px,rgba(47,111,174,.07) 31px 32px)}
+.folha::before{content:"";position:absolute;left:0;right:0;top:0;height:8px;background:repeating-linear-gradient(90deg,var(--papel) 0 10px,transparent 10px 20px);transform:translateY(-8px)}
+.os-cab{display:grid;grid-template-columns:1.35fr 1fr;gap:clamp(20px,4vw,48px);padding-bottom:28px;border-bottom:3px double var(--carvao)}
+.os-id>.mono{margin:0 0 14px;font-size:.875rem;letter-spacing:.12em;color:var(--patio)}
+.os-id h1{font-size:clamp(2.2rem,5.6vw,4.4rem);letter-spacing:-.01em}
+.os-sub{font-size:1.15rem;margin:18px 0 24px;max-width:36em}
+.os-ctas{display:flex;flex-wrap:wrap;gap:12px}
+.os-campos{margin:0;border:2px solid var(--carvao);align-self:start;background:#fbfaf5}
+.os-campos div{display:grid;grid-template-columns:7.2em 1fr;border-bottom:1px solid var(--carvao)}
+.os-campos div:last-child{border-bottom:0}
+.os-campos dt{padding:10px 10px;font:600 .75rem/1.3 var(--mono);text-transform:uppercase;letter-spacing:.06em;color:var(--patio);border-right:1px solid var(--carvao)}
+.os-campos dd{margin:0;padding:10px 12px;font-weight:600}
+.anexo{position:relative;background:#fff;padding:10px 10px 8px;box-shadow:0 6px 16px rgba(0,0,0,.18)}
+.anexo figcaption{font-size:.8125rem;margin-top:8px;color:var(--patio)}
+.anexo-capa{margin:34px auto 6px;max-width:980px;transform:rotate(-.6deg)}
+.clipe{position:absolute;top:-18px;left:46px;width:26px;height:64px;border:4px solid #8b9099;border-radius:14px;z-index:2}
+.campo{display:grid;grid-template-columns:15rem 1fr;gap:10px 32px;padding:36px 0;border-bottom:1px solid var(--carvao)}
+.campo>*:not(h2){grid-column:2}
+.campo h2{grid-column:1;grid-row:1/span 6;font-size:1.6rem;align-self:start}
+.campo h2 .mono{display:block;font-size:.9rem;color:var(--telha);margin-bottom:4px;letter-spacing:.1em}
+.campo-ajuda{margin:0 0 6px;color:#3d3d3d}
+.checklist fieldset{border:0;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:0 24px}
+.checklist label{position:relative;display:flex;align-items:center;gap:14px;min-height:56px;border-bottom:1px dashed #a9a28d;cursor:pointer;font-size:1.2rem}
+.checklist input{position:absolute;opacity:0;width:28px;height:28px;margin:0;left:0}
+.caixa{width:28px;height:28px;border:2.5px solid var(--carvao);background:#fff;flex:none;display:grid;place-items:center}
+.checklist input:checked+.caixa{background:var(--ok);border-color:var(--ok)}
+.checklist input:checked+.caixa::after{content:"";width:8px;height:15px;border:solid #fff;border-width:0 3.5px 3.5px 0;transform:translateY(-2px) rotate(45deg)}
+.checklist input:focus-visible+.caixa{outline:3px solid var(--carvao);outline-offset:3px;box-shadow:0 0 0 7px var(--amarelo)}
+.checklist label:hover .caixa{background:#fff5c2}
+.veiculo{margin:18px 0 6px;font-weight:600}
+.veiculo .mono{font-size:.75rem;letter-spacing:.1em;color:var(--patio);margin-right:8px}
+.veiculo i{font-style:normal;color:var(--telha)}
+.previa{margin:6px 0 16px;padding:10px 12px;background:#fff;border-left:4px solid var(--telha);font-size:.875rem;overflow-wrap:anywhere}
+.campo-garantia{align-items:center}
+.campo-garantia>div{grid-column:2}
+.carimbo{grid-column:2;justify-self:start;margin:0 0 6px;padding:10px 20px 8px;border:4px solid var(--amarelo);color:#8a6d00;background:rgba(230,184,0,.12);font:400 clamp(2rem,5vw,3.2rem)/1 var(--tit);letter-spacing:.06em;transform:rotate(-4deg);text-align:center}
+.carimbo small{display:block;font:600 .8125rem/1.4 var(--mono);letter-spacing:.14em;text-transform:uppercase;margin-top:4px}
+.garantia-txt{font-size:1.2rem;margin:0 0 4px}
+.pequeno{font-size:.8125rem;color:var(--patio);margin:8px 0 0}
+.obs{list-style:none;margin:0;padding:0;counter-reset:o}
+.obs li{display:grid;grid-template-columns:2.4rem 1fr;gap:0 12px;padding:14px 0;border-bottom:1px dashed #a9a28d;counter-increment:o}
+.obs li::before{content:counter(o,decimal-leading-zero);grid-row:span 2;font:600 .875rem/1.9 var(--mono);color:var(--telha)}
+.obs p{margin:0;font-size:1.3rem;font-weight:500}
+.obs p.resumo{font-size:1.05rem;font-weight:400;font-style:italic}
+.obs span{font-size:.8125rem;color:var(--patio)}
+.totais{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);border:2px solid var(--carvao)}
+.totais li{padding:16px 14px;border-right:1px solid var(--carvao)}
+.totais li:last-child{border-right:0}
+.totais b{display:block;font:400 clamp(1.8rem,3.6vw,2.8rem)/1.05 var(--tit)}
+.totais span{font:500 .8125rem var(--mono);text-transform:uppercase;letter-spacing:.06em;color:var(--patio)}
+.horario{width:100%;border-collapse:collapse;font-family:var(--mono);background:#fbfaf5}
+.horario th,.horario td{border:1px solid var(--carvao);padding:10px 12px;text-align:left}
+.horario thead th{background:var(--carvao);color:#fff;font-size:.8125rem;letter-spacing:.08em;text-transform:uppercase}
+.horario tbody th{font-family:var(--txt);font-weight:600}
+.horario tr.off td{color:var(--patio)}
+.horario tr.hoje{background:#fff1b0}
+.horario tr.hoje th::after{content:" ← hoje";font:600 .75rem var(--mono);color:var(--telha-esc)}
+.entrega{display:grid;grid-template-columns:1fr 1.25fr;gap:24px;align-items:start}
+.end{font:400 1.6rem/1.15 var(--tit);margin:0}
+.contatos{list-style:none;margin:16px 0 0;padding:0}
+.contatos a{display:inline-flex;align-items:center;min-height:44px;font-weight:600;color:var(--telha-esc);text-underline-offset:4px}
+.anexos{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.anexos .anexo:nth-child(1){transform:rotate(1.2deg)}.anexos .anexo:nth-child(2){transform:rotate(-1deg)}
+.anexos img{aspect-ratio:1/1;object-fit:cover;width:100%}
+.assinatura{display:grid;grid-template-columns:1fr 1fr;gap:40px;padding-top:56px}
+.assinatura .linha{display:block;border-top:1.5px solid var(--carvao)}
+.assinatura p{margin:6px 0 0;font-size:.8125rem;color:var(--patio)}
+.rodape{text-align:center;color:#fff;padding:0 16px 36px;font-size:.9375rem}
+@media (max-width:860px){
+ .os-cab,.entrega{grid-template-columns:1fr}
+ .campo{grid-template-columns:1fr}
+ .campo>*,.campo h2,.campo>*:not(h2),.campo-garantia>div{grid-column:1;grid-row:auto}
+ .totais{grid-template-columns:1fr 1fr}.totais li:nth-child(2){border-right:0}.totais li:nth-child(-n+2){border-bottom:1px solid var(--carvao)}
+}
+@media (max-width:560px){
+ .checklist fieldset{grid-template-columns:1fr}
+ .os-ctas .bt{width:100%}
+ .anexos{grid-template-columns:1fr}
+ .os-campos div{grid-template-columns:6.4em 1fr}
+ .horario th,.horario td{padding:8px 6px;font-size:.875rem}
+ .assinatura{grid-template-columns:1fr;gap:28px}
+ .telha-nome span{display:none}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important;animation:none!important}}

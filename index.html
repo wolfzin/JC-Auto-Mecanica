@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jc Auto Mecânica · Mecânica com garantia no Gasparinho, Gaspar (demonstração)</title>
+<meta name="description" content="Jc Auto Mecânica: mecânica geral, motor, freios, suspensão, troca de óleo e linha diesel na Rua Alfredo Schramm, 45, Gasparinho, Gaspar/SC. Demonstração WolfStudio.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#2F6FAE">
+<link rel="stylesheet" href="assets/css/fonts.css">
+<link rel="stylesheet" href="assets/css/style.css">
+<style>
+/* ===== Movimento (WolfStudio v3) — só roda com JS e sem "reduzir movimento" ===== */
+:root{--e:cubic-bezier(.2,.7,.2,1)}
+.anim :is(.campo>h2,.campo-ajuda,.checklist label,.veiculo,.previa,.campo-garantia>div,.campo-garantia .carimbo,.obs li,.totais li,.horario,.entrega>div:first-child,.anexos .anexo,.assinatura>div){transition:opacity .7s var(--e) var(--d,0ms),translate .8s var(--e) var(--d,0ms),scale .8s var(--e) var(--d,0ms),rotate .8s var(--e) var(--d,0ms),transform .35s var(--e),box-shadow .35s,border-color .25s,background-color .25s}
+.anim :is(.campo>h2,.campo-ajuda,.checklist label,.veiculo,.previa,.campo-garantia>div,.campo-garantia .carimbo,.obs li,.totais li,.horario,.entrega>div:first-child,.anexos .anexo,.assinatura>div):not(.in){opacity:0;translate:var(--tx,0px) var(--ty,22px);scale:var(--sc,1)}
+@keyframes sobe{from{opacity:0;translate:0 18px}}
+@keyframes gira{to{rotate:360deg}}
+@media print{.anim *{opacity:1!important;translate:none!important;scale:none!important;clip-path:none!important}}
+[id]{scroll-margin-top:64px}
+/* ordem de serviço: os campos são preenchidos e o anexo é "grampeado" */
+.os-id>*{animation:sobe .8s var(--e) both}
+.os-id>:nth-child(2){animation-delay:.1s}.os-id>:nth-child(3){animation-delay:.2s}.os-id>:nth-child(4){animation-delay:.3s}
+.anim .os-campos>div{animation:linha-os .5s var(--e) both}
+.os-campos>div:nth-child(1){animation-delay:.3s}.os-campos>div:nth-child(2){animation-delay:.38s}.os-campos>div:nth-child(3){animation-delay:.46s}.os-campos>div:nth-child(4){animation-delay:.54s}.os-campos>div:nth-child(5){animation-delay:.62s}.os-campos>div:nth-child(6){animation-delay:.7s}
+@keyframes linha-os{from{opacity:0;translate:10px 0}}
+.anexo-capa{animation:anexo .9s cubic-bezier(.3,1.2,.4,1) .55s both}
+@keyframes anexo{from{opacity:0;translate:0 -24px;rotate:-3deg}}
+.status.aberto .ponto{animation:pisca-ponto 1.6s ease-in-out infinite}
+@keyframes pisca-ponto{50%{opacity:.3}}
+/* serviços: o "✓" pula ao marcar */
+.anim .checklist label{--ty:10px}
+.checklist input:checked+.caixa{animation:marca .35s cubic-bezier(.3,1.6,.5,1)}
+@keyframes marca{from{scale:.6}}
+.previa{transition:background-color .3s}
+/* garantia: o carimbo bate */
+.anim .campo-garantia .carimbo{--ty:0px;--sc:1.9;transition:opacity .25s,scale .5s cubic-bezier(.3,1.4,.5,1)}
+/* observações, números, assinatura */
+.anim .obs li{--ty:14px}
+.totais b{font-variant-numeric:tabular-nums}
+.anexos .anexo{transition:transform .35s var(--e),box-shadow .35s}
+.anexos .anexo:nth-child(n):hover{transform:rotate(0deg) scale(1.02)}
+.assinatura .linha{transform-origin:0 50%;transition:scale 1s var(--e) calc(var(--d,0ms) + .2s)}
+.anim .assinatura>div:not(.in) .linha{scale:0 1}
+.bt-tel{transition:transform .15s,box-shadow .15s}
+.bt-tel:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--carvao)}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important;scroll-behavior:auto!important}}
+</style>
+<script>(function(d){if('IntersectionObserver' in window&&!matchMedia('(prefers-reduced-motion:reduce)').matches)d.classList.add('anim')})(document.documentElement)</script>
+</head>
+<body>
+<a class="pular" href="#conteudo">Pular para o conteúdo</a>
+<div class="demo-faixa" role="note">Demonstração WolfStudio — não é o site oficial.</div>
+<header class="telha">
+  <p class="telha-nome"><a href="#inicio">Jc Auto Mecânica</a> <span>· Gasparinho · desde 2018</span></p>
+  <p class="status" id="status" aria-live="polite"><span class="ponto" aria-hidden="true"></span><span id="status-txt">Seg a sex · 7h30–12h e 13h30–18h</span></p>
+</header>
+
+<main id="conteudo" tabindex="-1">
+<article class="folha" id="inicio">
+  <header class="os-cab">
+    <div class="os-id">
+      <p class="mono">ORDEM DE SERVIÇO · via do cliente</p>
+      <h1>Orçamento e mecânica com garantia em Gaspar.</h1>
+      <p class="os-sub">Mecânica geral, motor, freios, suspensão e troca de óleo. Carros nacionais e importados, e linha diesel.</p>
+      <div class="os-ctas">
+        <a class="bt bt-amarelo" id="cta-topo" href="https://wa.me/5547997564758?text=Ol%C3%A1!%20Quero%20or%C3%A7amento%20de%3A%20" target="_blank" rel="noopener">Pedir orçamento no WhatsApp</a>
+        <a class="bt bt-tel" href="tel:+554730182442">Ligar (47) 3018-2442</a>
+      </div>
+    </div>
+    <dl class="os-campos">
+      <div><dt>Oficina</dt><dd>Jc Auto Mecânica</dd></div>
+      <div><dt>Responsável</dt><dd>Jucimar Preilipper</dd></div>
+      <div><dt>Endereço</dt><dd>R. Alfredo Schramm, 45 · Gasparinho</dd></div>
+      <div><dt>Aberta em</dt><dd class="mono">05/02/2018</dd></div>
+      <div><dt>WhatsApp</dt><dd class="mono">(47) 99756-4758</dd></div>
+      <div><dt>Avaliação</dt><dd class="mono">4,9★ · 174 no Google</dd></div>
+    </dl>
+  </header>
+
+  <figure class="anexo anexo-capa">
+    <span class="clipe" aria-hidden="true"></span>
+    <img width="1600" height="864" src="assets/img/galpao-faixa-azul.jpg" alt="Galpão branco da Jc Auto Mecânica com a faixa azul de telha no alto e carros e vans no pátio de cascalho" fetchpriority="high">
+    <figcaption class="mono">ANEXO 1 · o galpão da faixa azul, no Gasparinho</figcaption>
+  </figure>
+
+  <section class="campo" id="servicos" aria-labelledby="t-serv">
+    <h2 id="t-serv"><span class="mono">01</span> Serviços</h2>
+    <p class="campo-ajuda">Marque o que o seu carro precisa e mande a lista pronta no WhatsApp. Serviços conforme a descrição da própria oficina no Google.</p>
+    <form class="checklist" id="checklist" action="https://wa.me/5547997564758" target="_blank">
+      <fieldset>
+        <legend class="sr">Serviços para o orçamento</legend>
+        <label><input type="checkbox" name="s" value="mecânica geral"><span class="caixa" aria-hidden="true"></span><b>Mecânica geral</b></label>
+        <label><input type="checkbox" name="s" value="motor"><span class="caixa" aria-hidden="true"></span><b>Motor</b></label>
+        <label><input type="checkbox" name="s" value="freios"><span class="caixa" aria-hidden="true"></span><b>Freios</b></label>
+        <label><input type="checkbox" name="s" value="suspensão"><span class="caixa" aria-hidden="true"></span><b>Suspensão</b></label>
+        <label><input type="checkbox" name="s" value="troca de óleo"><span class="caixa" aria-hidden="true"></span><b>Troca de óleo</b></label>
+        <label><input type="checkbox" name="s" value="linha diesel"><span class="caixa" aria-hidden="true"></span><b>Linha diesel</b></label>
+      </fieldset>
+      <p class="veiculo"><span class="mono">VEÍCULO</span> nacionais <i>·</i> importados <i>·</i> diesel</p>
+      <p class="previa mono" id="previa" aria-live="polite">Mensagem: “Olá! Quero orçamento de: …”</p>
+      <button class="bt bt-amarelo" type="submit">Mandar a lista no WhatsApp</button>
+    </form>
+  </section>
+
+  <section class="campo campo-garantia" aria-labelledby="t-gar">
+    <h2 id="t-gar"><span class="mono">02</span> Garantia</h2>
+    <p class="carimbo" aria-hidden="true">GARANTIA<small>em todos os serviços</small></p>
+    <div>
+      <p class="garantia-txt">A oficina declara <strong>garantia em todos os serviços</strong>, com equipe qualificada e preço justo.</p>
+      <p class="mono pequeno">Prazo e condições da garantia: a confirmar na oficina.</p>
+    </div>
+  </section>
+
+  <section class="campo" aria-labelledby="t-obs">
+    <h2 id="t-obs"><span class="mono">03</span> Observações de quem já levou o carro</h2>
+    <ol class="obs">
+      <li><p>“extrema qualidade… Preço justo”</p><span class="mono">João Andrieti · 5★ · 10/07/2026</span></li>
+      <li><p>“Atendimento 10… serviço rápido.”</p><span class="mono">Rodrigo Junkes · 5★ · 07/08/2026</span></li>
+      <li><p class="resumo">Chegou por indicação da GKF Fretamentos e elogia o Jucemar por resolver um problema que outras oficinas não resolveram.</p><span class="mono">Samuel Lemes · 5★ · 27/05/2026 · resumo</span></li>
+      <li><p class="resumo">Destaca a oficina atualizada em ferramentas e diz que indica para os colegas.</p><span class="mono">Alexandre Felipe · 5★ · 28/05/2026 · resumo</span></li>
+    </ol>
+    <p class="mono pequeno">Avaliações do Google. A oficina responde às avaliações.</p>
+  </section>
+
+  <section class="campo" aria-labelledby="t-num">
+    <h2 id="t-num"><span class="mono">04</span> Em números</h2>
+    <ul class="totais">
+      <li><b>4,9★</b><span>nota no Google</span></li>
+      <li><b>174</b><span>avaliações</span></li>
+      <li><b>+8</b><span>anos em Gaspar</span></li>
+      <li><b>seg–sex</b><span>atendimento</span></li>
+    </ul>
+  </section>
+
+  <section class="campo" id="horario" aria-labelledby="t-hor">
+    <h2 id="t-hor"><span class="mono">05</span> Horário</h2>
+    <table class="horario">
+      <caption class="sr">Horário de atendimento</caption>
+      <thead><tr><th scope="col">Dia</th><th scope="col">Manhã</th><th scope="col">Tarde</th></tr></thead>
+      <tbody>
+        <tr data-d="1"><th scope="row">Segunda</th><td>07:30–12:00</td><td>13:30–18:00</td></tr>
+        <tr data-d="2"><th scope="row">Terça</th><td>07:30–12:00</td><td>13:30–18:00</td></tr>
+        <tr data-d="3"><th scope="row">Quarta</th><td>07:30–12:00</td><td>13:30–18:00</td></tr>
+        <tr data-d="4"><th scope="row">Quinta</th><td>07:30–12:00</td><td>13:30–18:00</td></tr>
+        <tr data-d="5"><th scope="row">Sexta</th><td>07:30–12:00</td><td>13:30–18:00</td></tr>
+        <tr data-d="6" class="off"><th scope="row">Sábado</th><td colspan="2">fechado</td></tr>
+        <tr data-d="0" class="off"><th scope="row">Domingo</th><td colspan="2">fechado</td></tr>
+      </tbody>
+    </table>
+    <p class="mono pequeno">Fonte: Google Maps. Feriado de 12/10: horário a confirmar.</p>
+  </section>
+
+  <section class="campo" id="contato" aria-labelledby="t-ent">
+    <h2 id="t-ent"><span class="mono">06</span> Entrega e retirada</h2>
+    <div class="entrega">
+      <div>
+        <p class="end">Rua Alfredo Schramm, 45<br>Gasparinho · Gaspar/SC</p>
+        <p class="mono pequeno">CEP 89112-036</p>
+        <ul class="contatos">
+          <li><a href="https://wa.me/5547997564758?text=Ol%C3%A1!%20Quero%20or%C3%A7amento%20de%3A%20" target="_blank" rel="noopener">WhatsApp (47) 99756-4758</a></li>
+          <li><a href="tel:+554730182442">Fixo (47) 3018-2442</a></li>
+          <li><a href="https://www.google.com/maps/search/?api=1&amp;query=Jc%20auto%20mec%C3%A2nica%2C%20Rua%20Alfredo%20Schramm%2C%2045%2C%20Gaspar%20SC" target="_blank" rel="noopener">Abrir no Google Maps</a></li>
+        </ul>
+      </div>
+      <div class="anexos">
+        <figure class="anexo"><img loading="lazy" decoding="async" width="1040" height="900" src="assets/img/galpao-lateral.jpg" alt="Lateral do galpão com a cobertura azul na entrada e veículos estacionados no pátio"><figcaption class="mono">ANEXO 2 · entrada coberta</figcaption></figure>
+        <figure class="anexo"><img loading="lazy" decoding="async" width="1400" height="1050" src="assets/img/patio-cascalho-vans.jpg" alt="Pátio de cascalho em frente ao galpão, com vans e carros estacionados"><figcaption class="mono">ANEXO 3 · pátio</figcaption></figure>
+      </div>
+    </div>
+    <p class="mono pequeno">Placas dos veículos borradas nas fotos.</p>
+  </section>
+
+  <footer class="assinatura">
+    <div><span class="linha" aria-hidden="true"></span><p class="mono">Jc Auto Mecânica · CNPJ 29.619.629/0001-04</p></div>
+    <div><span class="linha" aria-hidden="true"></span><p class="mono">Cliente</p></div>
+  </footer>
+</article>
+</main>
+
+<footer class="rodape">
+  <p>Demonstração feita por WolfStudio. Não é o site oficial da Jc Auto Mecânica.</p>
+</footer>
+<script src="assets/js/main.js"></script>
+<script>
+/* Movimento (WolfStudio v3): revelar ao rolar, contadores e menu ativo. */
+(function(){
+  var R=document.documentElement; if(!R.classList.contains('anim')) return;
+  try{
+    var SEL='.campo>h2,.campo-ajuda,.checklist label,.veiculo,.previa,.campo-garantia>div,.campo-garantia .carimbo,.obs li,.totais li,.horario,.entrega>div:first-child,.anexos .anexo,.assinatura>div', CNT='.totais li:first-child b';
+    var io=new IntersectionObserver(function(es){
+      var n=0;
+      es.forEach(function(e){
+        if(!e.isIntersecting) return;
+        var el=e.target; io.unobserve(el);
+        if(n) el.style.setProperty('--d',Math.min(n,7)*90+'ms');
+        n++; el.classList.add('in');
+        setTimeout(function(){el.style.removeProperty('--d')},1700);
+      });
+    },{threshold:.08,rootMargin:'0px 0px -5% 0px'});
+    var pend=[].slice.call(document.querySelectorAll(SEL));
+    pend.forEach(function(el){io.observe(el)});
+    /* rolagem rápida pode pular um bloco: o que já ficou para cima aparece sem esperar */
+    var tv=0;
+    function varre(){pend=pend.filter(function(el){
+      if(el.classList.contains('in')) return false;
+      if(el.getBoundingClientRect().bottom<0){io.unobserve(el);el.classList.add('in');return false}
+      return true;
+    })}
+
+    function conta(el){
+      var tn=null;
+      [].some.call(el.childNodes,function(c){if(c.nodeType===3&&/\d,\d/.test(c.nodeValue)){tn=c;return true}});
+      if(!tn) return;
+      var full=tn.nodeValue, m=full.match(/(\d+),(\d)/), alvo=parseFloat(m[1]+'.'+m[2]), t0=null;
+      function f(t){
+        if(!t0) t0=t;
+        var p=Math.min(1,(t-t0)/1100), v=alvo*(1-Math.pow(1-p,3));
+        tn.nodeValue=p<1?full.replace(m[0],v.toFixed(1).replace('.',',')):full;
+        if(p<1) requestAnimationFrame(f);
+      }
+      requestAnimationFrame(f);
+    }
+    var cio=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){cio.unobserve(e.target);conta(e.target)}})},{threshold:.6});
+    [].forEach.call(document.querySelectorAll(CNT),function(el){cio.observe(el)});
+
+    var links=[].slice.call(document.querySelectorAll('nav a[href^="#"]')), mapa={};
+    var sio=new IntersectionObserver(function(es){es.forEach(function(e){
+      if(!e.isIntersecting) return;
+      links.forEach(function(a){a.classList.remove('on')}); mapa[e.target.id].classList.add('on');
+    })},{rootMargin:'-40% 0px -55% 0px'});
+    links.forEach(function(a){var s=document.getElementById(a.getAttribute('href').slice(1)); if(s&&s.id!=='conteudo'){mapa[s.id]=a;sio.observe(s)}});
+
+    var espera=false;
+    function rolar(){
+      espera=false; var y=window.scrollY||0;
+      R.classList.toggle('rolou',y>8);
+      clearTimeout(tv); if(pend.length) tv=setTimeout(varre,180);
+      if(y<160) links.forEach(function(a){a.classList.remove('on')});
+
+    }
+    window.addEventListener('scroll',function(){if(!espera){espera=true;requestAnimationFrame(rolar)}},{passive:true});
+    window.addEventListener('resize',rolar);
+    rolar();
+    /* números inteiros contam até o valor */
+    function inteiro(el,atraso){
+      var tn=el&&el.firstChild; if(!tn||tn.nodeType!==3) return;
+      var fim=tn.nodeValue, alvo=parseInt(fim,10); if(!(alvo>0)) return;
+      var o=new IntersectionObserver(function(es){
+        if(!es[0].isIntersecting) return; o.disconnect();
+        setTimeout(function(){var t0=null;(function f(t){if(!t0)t0=t;var p=Math.min(1,(t-t0)/1300);
+          tn.nodeValue=p<1?String(Math.round(alvo*(1-Math.pow(1-p,3)))):fim; if(p<1) requestAnimationFrame(f);})(performance.now())},atraso||0);
+      },{threshold:.5});
+      o.observe(el);
+    }
+    inteiro(document.querySelector('.totais li:nth-child(2) b'));
+  }catch(err){R.classList.remove('anim')}
+})();
+</script>
+</body>
+</html>
